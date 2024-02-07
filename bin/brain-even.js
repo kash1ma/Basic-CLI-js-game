@@ -1,7 +1,6 @@
 import readlineSync from 'readline-sync';
 
-// Function to generate a random number
-const generateRandomNumber = () => Math.floor(Math.random() * 100) + 1;
+import { getRandomNumber } from '../src/index.js';
 
 // Function to check if a number is even
 const isEven = (number) => number % 2 === 0;
@@ -11,7 +10,7 @@ export const playEvenGame = () => {
   console.log(`Answer "yes" if the number is even, otherwise answer "no".`);
 
   for (let i = 0; i < 3; i++) {
-    const randomNumber = generateRandomNumber();
+    const randomNumber = getRandomNumber();
     console.log(`Question: ${randomNumber}`);
     const userAnswer = readlineSync.question('Your answer: ');
 

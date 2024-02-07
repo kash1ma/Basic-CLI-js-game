@@ -1,9 +1,6 @@
 import readlineSync from 'readline-sync';
 
-// Генерация случайного числа в заданном диапазоне
-function getRandomNumber(min, max) {
-  return Math.floor(Math.random() * (max - min + 1)) + min;
-}
+import { getRandomNumber } from '../src/index.js';
 
 // Генерация случайной операции (+, -, *)
 function getRandomOperator() {
