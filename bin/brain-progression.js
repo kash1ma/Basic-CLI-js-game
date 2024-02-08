@@ -31,7 +31,7 @@ function playProgressionGame() {
     console.log(`Question: ${progression.join(' ')}`);
     const userAnswer = readlineSync.question('Your answer: ');
 
-    if (userAnswer === missingNumber) {
+    if (Number(userAnswer) === missingNumber) {
       console.log('Correct!');
     } else {
       console.log(`'${userAnswer}' is wrong answer ;(. Correct answer was '${missingNumber}'.`);
