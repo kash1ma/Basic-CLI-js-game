@@ -5,8 +5,5 @@ console.log('Welcome to the Brain Games!');
 export default function getUserName() {
   // Use the `question` function to prompt the user for input
   const name = readlineSync.question('What is your name? ');
-  return name;
+  console.log(`Hello, ${name}!`);
 }
-
-const userName = getUserName();
-console.log(`Hello, ${userName}!`);
