@@ -1,6 +1,9 @@
+#!/usr/bin/env node
 import readlineSync from 'readline-sync';
 
-import { getRandomNumber } from '../src/index.js';
+import greetingWithNameReturn, { getRandomNumber } from '../src/index.js';
+
+const name = greetingWithNameReturn();
 
 // Генерация случайной операции (+, -, *)
 function getRandomOperator() {
@@ -24,26 +27,26 @@ function calculateExpression(expression) {
 }
 
 // Основная функция игры
-export function playCalculatorGame() {
-  let score = 0;
+function playCalculatorGame() {
   const rounds = 3; // Количество раундов
 
-  console.log('Добро пожаловать в игру "Калькулятор"!\n');
+  console.log('What is the result of the expression?');
 
-  for (let round = 1; round <= rounds; round++) {
+  for (let round = 1; round <= rounds; round += 1) {
     const expression = generateRandomExpression();
-    const userAnswer = readlineSync.question(`Раунд ${round}: ${expression} = `);
+    console.log(`Question: ${expression} `);
+    const userAnswer = readlineSync.question('Your answer: ');
     const correctAnswer = calculateExpression(expression);
 
-    if (parseInt(userAnswer) === correctAnswer) {
-      console.log('Правильно!\n');
-      score += 1;
+    if (Number(userAnswer) === correctAnswer) {
+      console.log('Correct!');
     } else {
-      console.log(`Неправильно! Правильный ответ: ${correctAnswer}\n`);
+      console.log(`'${userAnswer}' is wrong answer ;(. Correct answer was '${correctAnswer}'`);
+      console.log(`Let's try again!, ${name}!`);
+      return
     }
   }
-
-  console.log(`Игра завершена. Ваш счет: ${score} из ${rounds}`);
+  console.log(`Congratulations, ${name}!`);
 }
 
 // Запуск игры

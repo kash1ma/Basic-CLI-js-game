@@ -1,6 +1,5 @@
-#!/usr/bin/env node.
-import { getUserName } from '../src/cli.js';
-import { chooseGame } from '../src/index.js';
+#!/usr/bin/env node
 
-getUserName;
-chooseGame;
+import getUserName from '../src/cli.js';
+
+getUserName();
