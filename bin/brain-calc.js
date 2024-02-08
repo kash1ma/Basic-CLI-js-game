@@ -18,14 +18,20 @@ function generateRandomExpression() {
   const num2 = getRandomNumber(1, 50);
   const operator = getRandomOperator();
 
-  return `${num1} ${operator} ${num2}`;
+  return { expression: `${num1} ${operator} ${num2}`, num1, operator, num2 };
 }
 
 // Вычисление результата выражения
-function calculateExpression(expression) {
-  return eval(expression);
+function calculateExpression(num1, operator, num2) {
+  switch (operator) {
+    case '+':
+      return num1 + num2;
+    case '-':
+      return num1 - num2;
+    case '*':
+      return num1 * num2;
+  }
 }
-
 // Основная функция игры
 function playCalculatorGame() {
   const rounds = 3; // Количество раундов
@@ -33,17 +39,17 @@ function playCalculatorGame() {
   console.log('What is the result of the expression?');
 
   for (let round = 1; round <= rounds; round += 1) {
-    const expression = generateRandomExpression();
+    const { expression, num1, operator, num2 } = generateRandomExpression();
     console.log(`Question: ${expression} `);
     const userAnswer = readlineSync.question('Your answer: ');
-    const correctAnswer = calculateExpression(expression);
+    const correctAnswer = calculateExpression(num1, operator, num2);
 
     if (Number(userAnswer) === correctAnswer) {
       console.log('Correct!');
     } else {
       console.log(`'${userAnswer}' is wrong answer ;(. Correct answer was '${correctAnswer}'`);
       console.log(`Let's try again, ${name}!`);
-      return
+      return;
     }
   }
   console.log(`Congratulations, ${name}!`);
