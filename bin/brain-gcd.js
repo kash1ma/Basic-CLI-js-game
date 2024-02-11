@@ -1,9 +1,9 @@
 #!/usr/bin/env node
-import readlineSync from 'readline-sync';
 
-import greetingWithNameReturn, { getRandomNumber } from '../src/index.js';
 
-const name = greetingWithNameReturn();
+import {playgame, getRandomNumber } from '../src/index.js';
+
+
 
 function gcd(a, b) {
   // Base case: If b is 0, the GCD is a
@@ -14,27 +14,19 @@ function gcd(a, b) {
   return gcd(b, a % b);
 }
 
+const generateQuestion = () => {
+  const number1 = getRandomNumber(1, 50);
+  const number2 = getRandomNumber(1, 50);
+
+  const question = `${number1} ${number2}`;
+  const correctAnswer = `${gcd(number1, number2)}`;
+
+  return [question, correctAnswer];
+};
+
 function playGcdGame() {
-  console.log('Find the greatest common divisor of given numbers.');
-  const rounds = 3;
-
-  for (let i = 0; i < rounds; i += 1) {
-    const num1 = getRandomNumber(1, 100);
-    const num2 = getRandomNumber(1, 100);
-    const correctAnswer = gcd(num1, num2);
-
-    console.log(`Question: ${num1} ${num2}`);
-    const userAnswer = readlineSync.question('Your answer: ');
-
-    if (Number(userAnswer) === correctAnswer) {
-      console.log('Correct!');
-    } else {
-      console.log(`'${userAnswer}' is wrong answer ;(. Correct answer was '${correctAnswer}'.`);
-      console.log(`Let's try again, ${name}!`);
-      return;
-    }
-  }
-  console.log(`Congratulations, ${name}!`);
+  const rules = 'Find the greatest common divisor of given numbers.';
+  playgame(rules, generateQuestion)
 }
 
 playGcdGame();
