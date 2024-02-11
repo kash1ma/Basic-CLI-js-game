@@ -1,5 +1,5 @@
 #!/usr/bin/env node
-import { playgame, getRandomNumber } from "../src/index.js";
+import { playgame, getRandomNumber } from '../src/index.js';
 
 // Function to generate an arithmetic progression with a missing element
 function generateProgression() {
@@ -8,12 +8,11 @@ function generateProgression() {
   const firstEl = getRandomNumber(1, 20);
   const diff = getRandomNumber(1, 20);
 
-
   for (let i = 0; i < progressionLength; i += 1) {
     progression.push(firstEl + diff * i);
   }
-  
-  return progression
+
+  return progression;
 }
 
 function generateQuestion() {
@@ -21,13 +20,13 @@ function generateQuestion() {
   const missingNum = getRandomNumber(0, progression.length - 1);
   const correctAnswer = `${progression[missingNum]}`;
   progression[missingNum] = '..';
-  const question = progression.join(' ')
-  return [question, correctAnswer]
+  const question = progression.join(' ');
+  return [question, correctAnswer];
 }
 
 function playProgressionGame() {
   const rules = 'What number is missing in the progression?';
-  playgame(rules, generateQuestion)
+  playgame(rules, generateQuestion);
 }
 
 playProgressionGame();

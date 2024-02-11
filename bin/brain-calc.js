@@ -1,10 +1,9 @@
 #!/usr/bin/env node
 
-import  {playgame, getRandomNumber } from '../src/index.js';
+import { playgame, getRandomNumber } from '../src/index.js';
 
 // Генерация случайного математического выражения
 function generateQuestion() {
-
   let question = '';
   let correctAnswer = '';
 
@@ -26,12 +25,10 @@ function generateQuestion() {
   return [question, correctAnswer];
 }
 
-
 // Основная функция игры
 function playCalculatorGame() {
-
   const rules = 'What is the result of the expression?';
-  playgame(rules, generateQuestion)
+  playgame(rules, generateQuestion);
 }
 
 // Запуск игры

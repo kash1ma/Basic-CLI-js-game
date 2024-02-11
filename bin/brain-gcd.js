@@ -1,9 +1,6 @@
 #!/usr/bin/env node
 
-
-import {playgame, getRandomNumber } from '../src/index.js';
-
-
+import { playgame, getRandomNumber } from '../src/index.js';
 
 function gcd(a, b) {
   // Base case: If b is 0, the GCD is a
@@ -26,7 +23,7 @@ const generateQuestion = () => {
 
 function playGcdGame() {
   const rules = 'Find the greatest common divisor of given numbers.';
-  playgame(rules, generateQuestion)
+  playgame(rules, generateQuestion);
 }
 
 playGcdGame();
