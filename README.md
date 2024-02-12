@@ -1,5 +1,7 @@
 ### Hexlet tests and linter status:
 [![Actions Status](https://github.com/kash1ma/frontend-project-44/actions/workflows/hexlet-check.yml/badge.svg)](https://github.com/kash1ma/frontend-project-44/actions)
+### Maintainabilyty status:
+[![Maintainability](https://api.codeclimate.com/v1/badges/20bcee5f5e7bc1911b42/maintainability)](https://codeclimate.com/github/kash1ma/frontend-project-44/maintainability)
 
 Игры:
 
