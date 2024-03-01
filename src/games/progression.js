@@ -1,4 +1,4 @@
-import { playgame, getRandomNumber } from '../index.js';
+import { playGame, getRandomNumber } from '../index.js';
 // Function to generate an arithmetic progression with a missing element
 function generateProgression() {
   const progressionLength = Math.floor(Math.random() * 6) + 5; // Random length between 5 and 10
@@ -24,5 +24,5 @@ function generateQuestion() {
 
 export default function playProgressionGame() {
   const rules = 'What number is missing in the progression?';
-  playgame(rules, generateQuestion);
+  playGame(rules, generateQuestion);
 }

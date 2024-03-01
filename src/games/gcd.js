@@ -1,4 +1,4 @@
-import { playgame, getRandomNumber } from '../index.js';
+import { playGame, getRandomNumber } from '../index.js';
 
 function gcd(a, b) {
   // Base case: If b is 0, the GCD is a
@@ -21,5 +21,5 @@ const generateQuestion = () => {
 
 export default function playGcdGame() {
   const rules = 'Find the greatest common divisor of given numbers.';
-  playgame(rules, generateQuestion);
+  playGame(rules, generateQuestion);
 }

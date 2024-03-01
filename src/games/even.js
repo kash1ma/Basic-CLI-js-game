@@ -1,4 +1,4 @@
-import { getRandomNumber, playgame } from '../index.js';
+import { getRandomNumber, playGame } from '../index.js';
 
 function generateQuestion() {
   const question = getRandomNumber(1, 50);
@@ -9,5 +9,5 @@ function generateQuestion() {
 
 export default function playEvenGame() {
   const rules = 'Answer "yes" if the number is even, otherwise answer "no".';
-  playgame(rules, generateQuestion);
+  playGame(rules, generateQuestion);
 }

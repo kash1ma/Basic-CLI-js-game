@@ -1,4 +1,4 @@
-import { playgame, getRandomNumber } from '../index.js';
+import { playGame, getRandomNumber } from '../index.js';
 
 // Function to check if a number is prime
 function isPrime(num) {
@@ -22,5 +22,5 @@ function generateQuestion() {
 // Function to play the prime number game
 export default function playPrimeGame() {
   const rules = 'Answer "yes" if given number is prime. Otherwise answer "no".';
-  playgame(rules, generateQuestion);
+  playGame(rules, generateQuestion);
 }
