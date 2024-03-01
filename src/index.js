@@ -11,7 +11,7 @@ function greetingWithNameReturn() {
   return name;
 }
 
-function playgame(rules, generateQuestion) {
+function playGame(rules, generateQuestion) {
   const name = greetingWithNameReturn();
   console.log(rules);
   for (let i = 0; i < 3; i += 1) {
