@@ -17,7 +17,7 @@ function generateQuestion() {
   const correctAnswer = `${gcd(number1, number2)}`;
 
   return [question, correctAnswer];
-};
+}
 
 export default function playGcdGame() {
   const rules = 'Find the greatest common divisor of given numbers.';
