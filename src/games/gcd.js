@@ -9,7 +9,7 @@ function gcd(a, b) {
   return gcd(b, a % b);
 }
 
-const generateQuestion = () => {
+function generateQuestion() {
   const number1 = getRandomNumber(1, 50);
   const number2 = getRandomNumber(1, 50);
 

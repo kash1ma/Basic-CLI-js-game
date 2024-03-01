@@ -31,4 +31,4 @@ function playGame(rules, generateQuestion) {
   console.log(`Congratulations, ${name}!`);
 }
 
-export { playgame, getRandomNumber };
+export { playGame, getRandomNumber };
